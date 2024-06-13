@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const PersonaForm = ({ person, onClose }) => {
-
   const [formData, setFormData] = useState({ name: '', email: '' });
 
   useEffect(() => {
@@ -23,14 +22,11 @@ const PersonaForm = ({ person, onClose }) => {
   };
 
   return (
-    <div className="modal" style={{ display: 'block' }}>
-      <div className="modal-dialog">
+    <div className="modal show" tabIndex="-1" role="dialog" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }}>
+      <div className="modal-dialog modal-fullscreen" role="document">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Formulario de Persona</h5>
-            <button type="button" className="close" onClick={onClose}>
-              <span>&times;</span>
-            </button>
           </div>
           <div className="modal-body">
             <form onSubmit={handleSubmit}>
@@ -56,8 +52,10 @@ const PersonaForm = ({ person, onClose }) => {
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">Guardar</button>
-              <button type="button" className="btn btn-secondary ml-2" onClick={onClose}>Cancelar</button>
+              <div className="modal-footer">
+                <button type="submit" className="btn btn-primary">Guardar</button>
+                <button type="button" className="btn btn-secondary ml-2" onClick={onClose}>Cancelar</button>
+              </div>
             </form>
           </div>
         </div>

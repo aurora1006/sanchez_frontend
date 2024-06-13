@@ -28,8 +28,7 @@ function PersonList() {
   };
 
   const handleDelete = (id) => {
-    console.log(`Eliminar usuario con ID: ${id}`);
-    // Lógica para eliminar el usuario
+    alert(`Eliminar usuario con ID: ${id}`);
   };
 
   const handleCreateUser = () => {
@@ -70,7 +69,8 @@ function PersonList() {
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Email</th>
-                    <th>Acciones</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -81,7 +81,9 @@ function PersonList() {
                             <td>{user.email}</td>
                             <td>
                               <button className="btn btn-primary mr-2" onClick={() => handleEdit(user)}>Editar</button>
-                              <button className="btn btn-danger" onClick={() => handleDelete(user.id)}>Eliminar</button>
+                            </td>
+                            <td>
+                              <button className="btn btn-danger mr-2" onClick={() => handleDelete(user.id)}>Eliminar</button>
                             </td>
                         </tr>
                     ))}
